@@ -10,7 +10,9 @@ h2 {
 #wrapper  {
   float:center;
 }
-
+#about {
+  overflow-y: auto;
+}
 
 .viewport {
   margin: 10% auto 0 30%;
