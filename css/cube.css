@@ -1,9 +1,16 @@
+body {
+  font-family: "Helvetica Neue Bold", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  background: #ffffff url('../image/background.png') top center no-repeat;
+}
 h2 {
     margin-top: 0;
 }
 
-#wrapper {
+
+#wrapper  {
+  float:center;
 }
+
 
 .viewport {
   margin: 10% auto 0 30%;

@@ -1,64 +1,96 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Association Tsunami</title>
-    <link rel="stylesheet" href="css/cube.css" />
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script src="js/cube.js"></script>
-    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-    <script>
-        $(document).ready(function () {
-            windowResize();
-        });
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>Association Tsunami</title>
+  <link rel="stylesheet" type="text/css" href="css/cube.css" />
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/2.10.0/d3.v2.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/cube.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/client.js" type="text/javascript" charset="utf-8"></script>
+  <!--[if lt IE 9]><script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"></script><![endif]-->
+  <script>
+  $(document).ready(function () {
+    windowResize();
+  });
 
-        $(window).resize(function () {
-            windowResize();
-        });
+  $(window).resize(function () {
+    windowResize();
+  });
 
-        window.onorientationchange = function () {
-            windowResize();
-        };
-    </script>
+  window.onorientationchange = function () {
+    windowResize();
+  };
+  </script>
 </head>
 <body class="body_content">
-    <div id="wrapper">
-        <!--Cube Code from here-->
-        <article class="viewport">
-            <section class="cube">
-                <div id="top">
-                    <h1>UNSONPARLA 2012 -></h1>
-
-                </div>
-                <div id="face">
-                    <h1>Association Tsunami</h1>
-
-                    <p>Some blurb</p>
-                    <p>Association Tsunami, Association Tsunami, Association Tsunami</p>
-
-                </div>
-                <div id="side3">
-                    <h1>Sample div containing Links:</h1>
-                    <a href="http://www.google.com">Google Search</a>
-                </div>
-                <div id="side4">
-                    <h1>Another link Page</h1>
-                    <p>&#8220;A 3D cube can be created solely in CSS, with all six faces.&#8221;</p>
-                    Sample div containing Links:
-                    <a href="http://www.yahoo.com">Yahoo</a>
-                </div>
-                <div id="side5">
-                  <h1>Page 5</h1>
-                    <p>Some text</p>
-                </div>
-                <div id="bottom">
-                    <h1>We can add an image</h1>
-                    <img src="image/tsunami-bg.png"/>
-                </div>
-            </section>
-        </article>
-    </div>
-
+  <div id="wrapper">
+    <!--Cube Code from here-->
+    <article class="viewport">
+      <section class="cube">
+        <div id="top">
+          <h1>UNSONPARLA 2012 -></h1>
+          <p>Info about the Festival</p>
+          <p>Festival, Festival, Festival</p>
+        </div>
+        <div id="face">
+          <h1>Association Tsunami</h1>
+          <p>L'association Tsunami a pour but de développer la musique électronique hors norme, la musique acousmatique et la musique contemporaine instrumentale et mixte.</p>
+          <p>L'association gère:</p>
+          <ul>
+            <li>Le festival des musiques d'aujourd'hui Un son par là> qui existe depuis 2007 avec 2 années à Carré d'Art et 3 années dans les temples de la ville de Nîmes.</li>
+            <li>Le SPAM (Station Polymorphe d'Acoustique musicale) 2bis rue du grand couvent 30000 Nîmes qui est un lieu de résidence d'artistes liés au son, un lieu de présentation, un lieu de concert et de convivialité mais aussi un lieu de formation sur des programmes informatiques liés au son (pour novices, compositeurs ou DJ), le but étant de faire découvrir de nouveaux horizons de recherches sonores, et enfin un lieu d'ateliers pour la composition et la recherche et l'initiation à de nouvelles formes artistiques (tous public) ...</li>
+            <li>L'Ensemble O.Y.A.A.T.O qui est un ensemble de musicien qui interprète des œuvres du répertoire de la musique contemporaine, acousmatique, électronique et aussi d'art sonore.</li>
+            <li>L'Acousmonium SPAM (orchestre de haut parleurs) avec une quarantaine d'enceintes autonomes gérée par un pupitre de diffusion; ce qui permet la projection sonore et la mise en espace du son. L'Acousmonium SPAM fait partie des 10 plus gros acousmoniums d'Europe.</li>
+          </ul>
+        </div>
+        <div id="side3"></div>
+        <div id="side4">
+          <h1>Another link Page</h1>
+          <p>&#8220;A 3D cube can be created solely in CSS, with all six faces.&#8221;</p>
+          Sample div containing Links:
+          <a href="http://www.yahoo.com">Yahoo</a>
+        </div>
+        <div id="side5">
+          <h1>Page 5</h1>
+          <p>Some text</p>
+          <p>Festival, Festival, Festival</p>
+          <p>Festival, Festival, Festival</p>
+          <p>Festival, Festival, Festival</p>
+          <p>Festival, Festival, Festival</p>
+          <p>Festival, Festival, Festival</p>
+          <p>Festival, Festival, Festival</p>
+          <p>Festival, Festival, Festival</p>
+          <p>Festival, Festival, Festival</p>
+          <p>Festival, Festival, Festival</p>
+        </div>
+        <div id="bottom">
+          <h1>We can add an image</h1>
+          <img src="image/tsunami-bg.png"/>
+        </div>
+      </section>
+    </article>
+  </div>
+  <div id="about" title="About" style="display:none;">
+    <p>Asisium was established in 2012 by a group of experienced professionals in the construction industry with diverse but complimentary backgrounds in project management, engineering, construction, quantity surveying, architecture and law.</p>
+    <p>Led by two founding partners with over 35 years experience, we offer a range of consultancy services for the property development and construction industry. Our head office is based in London, UK, but we provide our services internationally throughout Europe, USA, Hong Kong, U.A.E and Myanmar (Burma).</p>  
+  </div>
+  <div id="equipe" title="Equipe" style="display:none">
+    Direction artistique : 
+    JLuc Gergonne (Compositeur et Musicien)
+    Communication : 
+    JMarie Bernard (Infographie)
+    Carolle Gaillac (Chargée de communication)
+    Technique : 
+    Camille Giuglaris (ingénieur du son et musicien)
+    Norman Khine (Développeur de projets informatiques)
+    Pédagogie : 
+    JMichel Olivares (ingénieur du son et formateur)
+    Administration:
+    Marie-Hélène Mas (Comptabilité/Administration)
+    Carole Bourgognon (Assistante à la coordination de projet)
+  </div>
 </body>
 </html>
