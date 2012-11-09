@@ -14,6 +14,10 @@ h2 {
   overflow-y: auto;
 }
 
+#face {
+  overflow-y: auto;
+}
+
 .viewport {
   margin: 10% auto 0 30%;
   -webkit-perspective: 800px;
