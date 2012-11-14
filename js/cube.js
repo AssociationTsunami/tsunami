@@ -1,4 +1,9 @@
 var dragging = 0;
+var leftArrow = "M6.684,25.682L24.316,15.5L6.684,5.318V25.682z",
+    rightArrow = "M24.316,5.318L6.684,15.5l17.632,10.182V5.318L24.316,5.318z",
+    topArrow = "M25.682,24.316L15.5,6.684L5.318,24.316H25.682z",
+    bottomArrow = "M5.318,6.684L15.5,24.316L25.682,6.684H5.318z";
+    
 $(function () {
   var el = document.createElement('div'),
   transformProps = 'transform WebkitTransform MozTransform OTransform msTransform'.split(' '),
@@ -45,20 +50,24 @@ $(function () {
       switch (evt.keyCode) {
         case 37: // left
         viewport.move({ y: viewport.y - 90 });
+        console.log("left");
         break;
 
         case 38: // up
         evt.preventDefault();
         viewport.move({ x: viewport.x + 90 });
+        console.log("up");
         break;
 
         case 39: // right
         viewport.move({ y: viewport.y + 90 });
+        console.log("right");
         break;
 
         case 40: // down
         evt.preventDefault();
         viewport.move({ x: viewport.x - 90 });
+        console.log("down");
         break;
 
         case 27: //esc
@@ -79,6 +88,7 @@ $(function () {
       mouse.start.y = evt.pageY;
       $(document).bind('mousemove touchmove', function (event) {
         dragging = 1;
+        console.log("mouse");
         // Only perform rotation if one touch or mouse (e.g. still scale with pinch and zoom)
         if (!touch || !(event.originalEvent && event.originalEvent.touches.length > 1)) {
           event.preventDefault();
@@ -141,7 +151,7 @@ $(function () {
       temp = ScreenWidth;
     }
 
-    cube_size = Math.ceil(temp / 1.75);
+    cube_size = Math.ceil(temp / 1.7);
     padding = 0.1 * cube_size;
     distance = (cube_size / 2) + (padding / 2);
     div_size = cube_size - padding;
