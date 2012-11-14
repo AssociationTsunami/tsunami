@@ -101,3 +101,11 @@ div.sc_menu {
     opacity:0.3;
     filter:progid:DXImageTransform.Microsoft.Alpha(opacity=30);
 }
+#footer {
+    background:transparent url(../images/logo.png) no-repeat bottom right;
+    height: 100px; 
+    width:100%;
+    position: absolute;
+    left: 0;
+    bottom: 0; 
+}
