@@ -1,6 +1,6 @@
 body {
   font-family: "Helvetica Neue Bold", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  background: #ffffff url('../images/courbe.png') no-repeat;
+  background: transparent url('../images/courbe.png') no-repeat;
 }
 
 h2 {
@@ -40,8 +40,6 @@ h2 {
 
 .cube {
   position: relative;
-  height: 400px;
-  width: 400px;
   -webkit-transition: -webkit-transform 50ms linear;
   -webkit-transform-style: preserve-3d;
   -webkit-transform: rotateX(-10deg) rotateY(20deg);
@@ -71,9 +69,6 @@ h2 {
 
 .cube > div {
   position: absolute;
-  height: 360px;
-  width: 360px;
-  padding: 20px;
   background-color: rgba(50, 50, 50, 0.85);
   font-size: 1em;
   line-height: 1em;

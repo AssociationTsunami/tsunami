@@ -1,33 +1,28 @@
 function tsunamiClient() {
   var self = this;
-  var iconPath = "m69.5 269c40-31.26-37.238-44.91-13.5 3 5.182 10.46 55.5 36.51 55.5-40 0-57.5-35-130.5-35-159.5s23-44.5 23-6-56.5 71.5-56.5 111.5c0 66.03 90.5 67.03 90.5 18 0-45.5-42.327-46.9-56-35.5-19.514 16.27-12.443 47.9 10.5 50-33.656-43.11 31.7-54.41 36-18 4.73 40.03-69.5 41.16-69.5-7.5 0-38.5 61.27-77.6 58.5-115.5-4-54.691-39.861-71.599-44-5-2.91 46.32 34.83 105.02 36.5 170.5 1.07 41.81-30.318 52.85-36 34z";
+  var iconPath = "m 22.390593,58.926523 c 19.759166,-7.210879 -18.39479,-10.35958 -6.668717,0.692027 2.559795,2.412852 27.415842,8.421909 27.415842,-9.226973 0,-13.263769 -17.28927,-30.102987 -17.28927,-36.79254 0,-6.689551 11.361517,-10.2650018 11.361517,-1.384045 0,8.880958 -27.9098146,16.493208 -27.9098146,25.720177 0,15.23142 44.7051056,15.46209 44.7051056,4.152135 0,-10.495678 -20.908654,-10.818621 -27.662828,-8.188934 -9.639506,3.753068 -6.146586,11.049296 5.186778,11.53371 -16.625358,-9.944366 15.659133,-12.550983 17.78325,-4.152136 2.336523,9.233892 -34.331547,9.494553 -34.331547,-1.730056 0,-8.880957 30.2661,-17.90032 28.897773,-26.642873 C 41.902764,0.29121134 24.188185,-3.609028 22.143606,11.753644 20.706124,22.438474 39.348896,35.979052 40.173842,51.0836 40.7024,60.728094 25.197386,63.274733 22.390593,58.926523 z";
   var width = $("#side3").width();
   var $loader		= $('#st_loading');
-	//the ul element 
-	var $list		= $('#menu');
-	//the current image being shown
-	var $currImage 	= $('#st_main').children('img:first');
-	
-	//let's load the current image 
-	//and just then display the navigation menu
-	$('<img>').load(function(){
-		$loader.hide();
-		$currImage.fadeIn(3000);
-		//slide out the menu
-		setTimeout(function(){
-			$list.animate({'left':'0px'},500);
-		},
-		1000);
-	}).attr('src',$currImage.attr('src'));
+  //the ul element 
+  var $list		= $('#menu');
+  //the current image being shown
+  var $currImage 	= $('#st_main').children('img:first');
+
+  //let's load the current image 
+  //and just then display the navigation menu
+  $('<img>').load(function(){
+    $loader.hide();
+    $currImage.fadeIn(3000);
+    //slide out the menu
+    setTimeout(function(){
+      $list.animate({'left':'0px'},500);
+    },
+    1000);
+    }).attr('src',$currImage.attr('src'));
 
   this.init = function() {
-    self.svg = d3.select("#side3").append("svg:svg")
-      .attr("width", "100%").attr("height", "100%");
-
-  $loader.hide();
-  self.drawMarkers();
-  self.sliderMenu();
-
+    self.sliderMenu();
+    $("#tabs").tabs().removeClass('ui-widget-content');
   };
   this.drawMarkers = function () {
     var iconHolder = self.svg.append('svg:g')
@@ -36,7 +31,7 @@ function tsunamiClient() {
       .style('opacity', 0.5)
       .on("mouseover", function(){d3.select(this).style('opacity', 1);})
       .on("mouseout", function(){d3.select(this).style('opacity', 0.5);})
-      .on("click", self.about);
+      .on("click", self.ateliers);
       
     iconHolder.append("svg:text")
       .text('ABOUT')
@@ -50,16 +45,16 @@ function tsunamiClient() {
       .attr("class", "icon");
   };
   // Overlay to display the content for each section
-  this.about = function() {
-    $('#about').dialog({
+  this.ateliers = function() {
+    $('#ateliers').dialog({
       autoOpen: true,
-      height: 350,
-      width: 250,
-      modal: false,
-      position: [50, 150],
+      height: 400,
+      width: 400,
+      modal: true,
+      position: [50, 160],
       open: function(){
         jQuery('.ui-widget-overlay').bind('click',function(){
-          jQuery('#about').dialog('close');
+          jQuery('#ateliers').dialog('close');
         })
       }
     });
@@ -69,13 +64,15 @@ function tsunamiClient() {
     /* function to make the thumbs menu scrollable */
     //clicking on a thumb, replaces the large image
     $list.find('.sc_menu img').bind('click',function(){
-      console.log('we have clicked an image');
       var $this = $(this);
       $('<img class="st_preview"/>').load(function(){
         var $this = $(this);
         var $currImage = $('#st_main').children('img:first');
         $this.insertBefore($currImage);
-        $loader.hide();
+        console.log("pull the musician's profile data");
+        self.svg = d3.select(".musician_overlay").append("svg:svg")
+          .attr("width", "100%").attr("height", "100%");
+        self.drawMarkers();
         $currImage.fadeOut(2000,function(){
           $(this).remove();
         });
@@ -85,7 +82,7 @@ function tsunamiClient() {
       }).bind('mouseleave',function(){
         $(this).stop().animate({'opacity':'0.7'});
       });
-    console.log('slider menu')
+
     //the loading image
     var $loader		= $('#st_loading');
     function buildThumbs($elem){

@@ -4,13 +4,25 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>Association Tsunami</title>
-  <link rel="stylesheet" type="text/css" href="css/client.css" />
-  <link rel="stylesheet" type="text/css" href="css/cube.css" />
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/2.10.0/d3.v2.min.js" type="text/javascript" charset="utf-8"></script>
+  <link rel="stylesheet" type="text/css" href="/css/jquery-ui-1.9.1.custom.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/jquery.ui.tabs.css">
+  <link rel="stylesheet" type="text/css" href="/css/zen.css" />
+  <link rel="stylesheet" type="text/css" href="/css/client.css" />
+  <link rel="stylesheet" type="text/css" href="/css/cube.css" />
+  
+  <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/d3.v2.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="js/cube.js" type="text/javascript" charset="utf-8"></script>
   <script src="js/client.js" type="text/javascript" charset="utf-8"></script>
+  
+  <script src="/js/jplayer/jquery.rotate.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/jplayer/jquery.grab.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/jplayer/jquery.jplayer.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/zen.js" type="text/javascript" charset="utf-8"></script>
+  
+  
+  <!--<script type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script>-->
   <!--[if lt IE 9]><script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"></script><![endif]-->
   <script>
   $(document).ready(function () {
@@ -27,36 +39,116 @@
   </script>
 </head>
 <body>
-  <div id="st_loading" class="st_loading"><span>Loading...</span></div>
   <div id="wrapper">
     <!--Cube Code from here-->
     <article class="viewport">
       <section class="cube">
         <div id="top">
-          <h1>UNSONPARLA 2012 -></h1>
-          <p>Info about the Festival</p>
-          <p>Festival, Festival, Festival</p>
+          <h1>Un son par là> est organisé par l’association Tsunami</h1>
+          <p>Tarif concert : 6€ / Tarif réduit : 4€ / Pass Festival : 25€ / Tarif réduit 15€</p>
+          <p>Les adhérents à l’association Tsunami bénéficient du tarif réduit.</p>
+          <p>Réservations : reservations@associationtsunami.org</p>
+          <label>Lieux du Festival 2012:</label>
+          <ul>
+            <li>Grand Temple – Place du Grand Temple 30000 Nîmes</li>
+            <li>Temple de l’Oratoire – Place de l’Oratoire 30000 Nîmes</li>
+            <li>Pour plus de confort, il est possible d’apporter coussins et couvertures</li>.
+          </ul>
+          <p>Matinée spéciale scolaire Vendredi 30 novembre 2012 au Temple de l’Oratoire.</p>
         </div>
         <div id="face">
           <p>L'association Tsunami a pour but de développer la musique électronique hors norme, la musique acousmatique et la musique contemporaine instrumentale et mixte.</p>
           <p>L'association gère:</p>
           <ul>
-            <li>Le festival des musiques d'aujourd'hui Un son par là> qui existe depuis 2007 avec 2 années à Carré d'Art et 3 années dans les temples de la ville de Nîmes.</li>
-            <li>Le SPAM (Station Polymorphe d'Acoustique musicale) 2bis rue du grand couvent 30000 Nîmes qui est un lieu de résidence d'artistes liés au son, un lieu de présentation, un lieu de concert et de convivialité mais aussi un lieu de formation sur des programmes informatiques liés au son (pour novices, compositeurs ou DJ), le but étant de faire découvrir de nouveaux horizons de recherches sonores, et enfin un lieu d'ateliers pour la composition et la recherche et l'initiation à de nouvelles formes artistiques (tous public) ...</li>
+            <li>Le festival des musiques d'aujourd'hui Un son par là> qui existe depuis 2007.</li>
+            <li>Le SPAM (Station Polymorphe d'Acoustique musicale) le but étant de faire découvrir de nouveaux horizons de recherches sonores.</li>
             <li>L'Ensemble O.Y.A.A.T.O qui est un ensemble de musicien qui interprète des œuvres du répertoire de la musique contemporaine, acousmatique, électronique et aussi d'art sonore.</li>
-            <li>L'Acousmonium SPAM (orchestre de haut parleurs) avec une quarantaine d'enceintes autonomes gérée par un pupitre de diffusion; ce qui permet la projection sonore et la mise en espace du son. L'Acousmonium SPAM fait partie des 10 plus gros acousmoniums d'Europe.</li>
+            <li>L'Acousmonium SPAM (orchestre de haut parleurs) avec une quarantaine d'enceintes autonomes gérée par un pupitre de diffusion; ce qui permet la projection sonore et la mise en espace du son.</li>
           </ul>
         </div>
-        <div id="side3"></div>
-        <div id="side4">
-          <h1>Another link Page</h1>
-          <p>&#8220;A 3D cube can be created solely in CSS, with all six faces.&#8221;</p>
-          Sample div containing Links:
-          <a href="http://www.yahoo.com">Yahoo</a>
+        <div id="jplayer">
+        	<div id="zen">
+        		<span class="player"></span>
+        		<span class="circle"></span>
+        		<span class="progress"></span>
+        		<span class="buffer"></span>
+        		<span class="drag"></span>
+        		<div class="button">
+        			<span class="icon play"></span>
+        			<span class="icon pause"></span>
+        		</div>
+        	</div>
         </div>
+        <div id="tabs">
+          <ul>
+            <li><a href="#tab-1">Ven, 30 Nov</a></li>
+            <li><a href="#tab-2">Sam, 1 Dec</a></li>
+            <li><a href="#tab-3">Dim, 2 Dec</a></li>
+          </ul>
+          <div id="tab-1">
+            <label>21h > Grand Temple : Concerts</label>
+            <ul>
+              <li>Bihe Wen : « Vague image » (2012 -8’00’’)</li>
+              <li>Jean-Luc Gergonne
+                « Atomkraft » (2012- 3’00’’)  
+                « Luna formes » (2012- 11’01’’)  
+              </li>
+              <li>Michel Chion : « Requiem » (1973- 37’20’’)</li>
+            </ul>
+            <label>21h > Grand Temple : Concerts</label>
+            <ul>
+              <li>Diez : DJ Experimental Break beat</li>
+              <li>Jacques-Marie Bernard : Etudes pour instruments tactiles/Résidence-Création SPAM</li>
+              <li>Luciaen Zellum : « spectra » vinyle préparé – installation (2012- 11’00’’)</li>
+              <li>Nicolas Dick : Guitare improvisée</li>
+            </ul>
+          </div>
+          <div id="tab-2">
+            <label>21h > Grand Temple : Concerts</label>
+            <ul>
+              <li>Jean-Luc Gergonne : « Envol » (2001- 1’00’’)</li>
+              <li>Nicolas Dick : « Une belle journée » (2009- 30’00’’) Diffusion en 16 points 
+              </li>
+              <li>Bertrand Dubedout : « Nara » (2001- 100’00’’)</li>
+            </ul>
+            <label>21h > Grand Temple : Concerts</label>
+            <ul>
+              <li>David Merlo : "Caìlin" (2011) et autres pièces/Solo basse électrique (Daath Label)</li>
+              <li>Ensemble O.Y.A.A.T.O : 
+              	* Karlheinz Stockhausen : « ? » pour ensemble libre (1968)
+                          * Vinko Globokar : « Ombre » solo pour percussions (1989)
+                          * La Monte Young : « Composition 1960#7 » pour ensemble (1960)</li>
+              <li>POSTCOÏTUM : «Animal Triste» Batterie-Laptop/Electro-indie-rock (Daath Label)</li>
+            </ul>
+          </div>
+          <div id="tab-3">
+            <label>11h > Temple de l’Oratoire : projections sonores et concerts sur l’Acousmonium SPAM (Orchestre de haut-parleurs)</label>
+            <ul>
+              <li>Simple ;amp Old : « Analogic Breakfast » (Vintage Synthesis) – Création SPAM</li>
+              <li>Improvisation libre des artistes invités du Festival</li>
+              <li>David Tudor & Takehisa Kosugi : Rainforest (version1) (1968- 21’47’’)</li>
+            </ul>
+            <label>17h > Temple de l’Oratoire : projections sonores et concerts sur l’Acousmonium SPAM (Orchestre de haut-parleurs):</label>
+            <ul>
+              <li>Ensemble O.Y.A.A.T.O 
+              * Analia Llugdar : « Canto » pour violoncelle et électronique, extrait de "Juana"   
+              Juana est une commande du CIRM (2012-6’34’’)</li>
+              <li>Christian Zanési : Paysage Electronique avec Train (2006-2012- 18’34’’)</li>
+              <li>Ensemble O.Y.A.A.T.O 
+              * JL. : « Matières brutes 1/2/3 » trio pour polystyrènes, ballons et boites de conserve (2005-2012)</li>
+              <li>Hugues Germain : « Bruit blanc » (2007- 10’32’’)</li>
+              <li>Ensemble O.Y.A.A.T.O 
+              * John Cage : « Branches » trio de percussions pour plantes amplifiées (1976)</li>
+              <li>Toma Gouband (percussions et cailloux)</li>
+              <li>LithOrchestre (orchestre de cailloux) 
+              atelier de rythme pour tous</li>
+            </ul>
+          </div>
+        </div> <!-- tabs end-->
         <div id="st_main" class="st_main">
           <img src="images/album/1.jpg" alt="" class="st_preview" style="display:none;"/>
           <div class="st_overlay"></div>
+          <div class="musician_overlay"></div>
           <ul class="menu" id="menu">
               <li>
                   <a href="#">Les Artistes</a>
@@ -91,15 +183,14 @@
           </ul>
         </div>
         <div id="bottom">
-          <h1>We can add an image</h1>
-          <img src="images/tsunami-bg.png"/>
+
         </div>
       </section>
     </article>
   </div>
-  <div id="about" title="About" style="display:none;">
-    <p>Asisium was established in 2012 by a group of experienced professionals in the construction industry with diverse but complimentary backgrounds in project management, engineering, construction, quantity surveying, architecture and law.</p>
-    <p>Led by two founding partners with over 35 years experience, we offer a range of consultancy services for the property development and construction industry. Our head office is based in London, UK, but we provide our services internationally throughout Europe, USA, Hong Kong, U.A.E and Myanmar (Burma).</p>  
+  <div id="ateliers" title="Des ateliers et des formations" style="display:none;">
+    <p>Pour que chacun puisse découvrir les répertoires et les outils, pour que chacun puisse s’es- sayer à la création et à l’interprétation, nous avons proposé des ateliers et des formations. Ils se déroulent dans nos locaux du SPAM et ailleurs. Ils sont adaptés au public concerné, des enfants et des adultes, des néophytes et des pro- fessionnels.
+    Ils sont mis en place en concertation avec les institutions organisatrices.</p>  
   </div>
   <div id="equipe" title="Equipe" style="display:none">
     Direction artistique : 
