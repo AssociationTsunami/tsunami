@@ -22,6 +22,13 @@ function tsunamiClient() {
 
   this.init = function() {
     self.sliderMenu();
+    $("#accordion").accordion({ header: "h3", collapsible: true, active: false });
+    $("#accordion1").accordion({ header: "h3", collapsible: true, active: false });
+    $("#accordion2").accordion({ header: "h3", collapsible: true, active: false });
+    $("#accordion3").accordion({ header: "h3", collapsible: true, active: false });
+    $("#accordion4").accordion({ header: "h3", collapsible: true, active: false });
+    $("#accordion5").accordion({ header: "h3", collapsible: true, active: false });
+    $("#accordion6").accordion({ header: "h3", collapsible: true, active: false });
     $("#tabs").tabs().removeClass('ui-widget-content');
   };
   this.drawMarkers = function () {

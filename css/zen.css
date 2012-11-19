@@ -153,7 +153,7 @@
 	height: 100px;
 }
 #zen .button .icon.play {
-	background: url(../img/play.png) no-repeat;
+	background: url(images/zen/play.png) no-repeat;
 	
 	-webkit-transition: opacity 1s cubic-bezier(.5,.5,.5,1);	
 	   -moz-transition: opacity 1s cubic-bezier(.5,.5,.5,1);	
@@ -172,7 +172,7 @@
 
 #zen .button .icon.pause {
 	opacity: 0;	
-	background: url(../img/pause.png) no-repeat;
+	background: url(images/zen/pause.png) no-repeat;
 }
 #zen.play .button .pause {
 	opacity: 1;
@@ -203,7 +203,7 @@
 	position: absolute;
 	width: 100px;
 	height: 100px;
-	background: url(../img/buffer.png) no-repeat;
+	background: url(images/zen/buffer.png) no-repeat;
 }
 #zen .buffer.loaded {
 	opacity: 0;
@@ -221,7 +221,7 @@
 	position: absolute;
 	width: 100px;
 	height: 100px;
-	background: url(../img/progress.png) no-repeat;
+	background: url(images/zen/progress.png) no-repeat;
 	opacity: .85;
 }
 
@@ -240,12 +240,12 @@
 	margin: 1px;
 	border-radius: 50px;
 	
-	background: url(../img/circle-still.png); /* fallback */
-	background: url(../img/circle.png) no-repeat, -webkit-gradient(radial, center center, 35, center center, 15, from(hsla(200,100%,0%,0)), to(hsla(200,100%,0%,1)));
-	background: url(../img/circle.png) no-repeat, -webkit-radial-gradient(50% 50%, hsla(200,100%,0%,1), hsla(200,100%,0%,1), hsla(200,100%,0%,0) 50%);
-	background: url(../img/circle.png) no-repeat,    -moz-radial-gradient(50% 50%, hsla(200,100%,0%,1), hsla(200,100%,0%,1), hsla(200,100%,0%,0) 50%);
-	background: url(../img/circle.png) no-repeat,      -o-radial-gradient(50% 50%, hsla(200,100%,0%,1), hsla(200,100%,0%,1), hsla(200,100%,0%,0) 50%);
-	background: url(../img/circle.png) no-repeat, 	      radial-gradient(50% 50%, hsla(200,100%,0%,1), hsla(200,100%,0%,1), hsla(200,100%,0%,0) 50%);
+	background: url(images/zen/circle-still.png); /* fallback */
+	background: url(images/zen/circle.png) no-repeat, -webkit-gradient(radial, center center, 35, center center, 15, from(hsla(200,100%,0%,0)), to(hsla(200,100%,0%,1)));
+	background: url(images/zen/circle.png) no-repeat, -webkit-radial-gradient(50% 50%, hsla(200,100%,0%,1), hsla(200,100%,0%,1), hsla(200,100%,0%,0) 50%);
+	background: url(images/zen/circle.png) no-repeat,    -moz-radial-gradient(50% 50%, hsla(200,100%,0%,1), hsla(200,100%,0%,1), hsla(200,100%,0%,0) 50%);
+	background: url(images/zen/circle.png) no-repeat,      -o-radial-gradient(50% 50%, hsla(200,100%,0%,1), hsla(200,100%,0%,1), hsla(200,100%,0%,0) 50%);
+	background: url(images/zen/circle.png) no-repeat, 	      radial-gradient(50% 50%, hsla(200,100%,0%,1), hsla(200,100%,0%,1), hsla(200,100%,0%,0) 50%);
 		
 	background-color: hsl(100,100%,60%);
 	

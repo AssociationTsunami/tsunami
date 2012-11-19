@@ -50,24 +50,20 @@ $(function () {
       switch (evt.keyCode) {
         case 37: // left
         viewport.move({ y: viewport.y - 90 });
-        console.log("left");
         break;
 
         case 38: // up
         evt.preventDefault();
         viewport.move({ x: viewport.x + 90 });
-        console.log("up");
         break;
 
         case 39: // right
         viewport.move({ y: viewport.y + 90 });
-        console.log("right");
         break;
 
         case 40: // down
         evt.preventDefault();
         viewport.move({ x: viewport.x - 90 });
-        console.log("down");
         break;
 
         case 27: //esc
@@ -88,7 +84,6 @@ $(function () {
       mouse.start.y = evt.pageY;
       $(document).bind('mousemove touchmove', function (event) {
         dragging = 1;
-        console.log("mouse");
         // Only perform rotation if one touch or mouse (e.g. still scale with pinch and zoom)
         if (!touch || !(event.originalEvent && event.originalEvent.touches.length > 1)) {
           event.preventDefault();
@@ -152,7 +147,7 @@ $(function () {
     }
 
     cube_size = Math.ceil(temp / 1.7);
-    padding = 0.08 * cube_size;
+    padding = 0.1 * cube_size;
     distance = (cube_size / 2) + (padding / 2);
     div_size = cube_size - padding;
     var translate = ' translateZ(' + distance + 'px)'

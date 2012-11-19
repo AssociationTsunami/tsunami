@@ -7,6 +7,9 @@
 ::-webkit-scrollbar-track-piece:horizontal:end{border-top-left-radius:0;border-top-right-radius:0px;border-bottom-right-radius:0px;border-bottom-left-radius:0;-moz-border-radius-topleft:0;-moz-border-radius-topright:5px;-moz-border-radius-bottomright:5px;-moz-border-radius-bottomleft:0;-webkit-border-top-left-radius:0;-webkit-border-top-right-radius:0px;-webkit-border-bottom-right-radius:0px;-webkit-border-bottom-left-radius:0;}
 ::-webkit-scrollbar-thumb:vertical,::-webkit-scrollbar-thumb:horizontal{background:#999;border-radius:0px;-moz-border-radius:0px;-webkit-border-radius:0px;display:block;height:50px;}
 
+.ui-accordion-content {
+  font-size: 77%;
+}
 
 #tabs {
   overflow-y: auto;
