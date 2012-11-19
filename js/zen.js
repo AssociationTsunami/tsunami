@@ -13,27 +13,26 @@
 
 
 $(document).ready(function(){    
-		
-  	var status = "stop";
-	var dragging = false;
-	
 
-	
-	// init
-	
-	var player = $("#zen .player");
-		
-	player.jPlayer({
-			ready: function () {
-      		$(this).jPlayer("setMedia", {
-    			m4a: "audio/song.m4a",
-				mp3: "audio/song.mp3",
-        		oga: "audio/song.ogg"
-      		});
-    	},
-    	swfPath: "",
-		supplied: "m4a, mp3, oga"         
-  	});  
+  var status = "stop";
+  var dragging = false;
+
+
+
+  // init
+
+  var player = $("#zen .player");
+
+  player.jPlayer({
+    ready: function () {
+      $(this).jPlayer("setMedia", {
+        m4a: "audio/01_Tribu.m4a",
+        mp3: "audio/01_Tribu.mp3",
+      });
+    },
+    swfPath: "",
+    supplied: "m4a, mp3, oga"         
+  });  
 
 
 

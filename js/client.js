@@ -70,9 +70,6 @@ function tsunamiClient() {
         var $currImage = $('#st_main').children('img:first');
         $this.insertBefore($currImage);
         console.log("pull the musician's profile data");
-        self.svg = d3.select(".musician_overlay").append("svg:svg")
-          .attr("width", "100%").attr("height", "100%");
-        self.drawMarkers();
         $currImage.fadeOut(2000,function(){
           $(this).remove();
         });

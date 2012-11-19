@@ -152,7 +152,7 @@ $(function () {
     }
 
     cube_size = Math.ceil(temp / 1.7);
-    padding = 0.1 * cube_size;
+    padding = 0.08 * cube_size;
     distance = (cube_size / 2) + (padding / 2);
     div_size = cube_size - padding;
     var translate = ' translateZ(' + distance + 'px)'
