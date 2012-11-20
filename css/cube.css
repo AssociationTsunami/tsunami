@@ -1,17 +1,7 @@
-h2 {
-    margin-top: 0;
-}
-
-
-#wrapper  {
-  float:center;
-}
-#about {
-  overflow-y: auto;
-}
 
 .viewport {
-  margin: 10% auto 0 30%;
+  margin: 5% auto 0 30%;
+  float:center;
   -webkit-perspective: 800px;
   -webkit-perspective-origin: 50% 200px;
   -webkit-transform: scale(0.75,0.75);
@@ -65,7 +55,7 @@ h2 {
   -webkit-user-select: none;
   -ms-user-select: none;
   position: absolute;
-  background-color: rgba(50, 50, 50, 0.85);
+  background-color: rgba(50, 50, 50, 0.75);
   color: #fff;
   border: 1px solid #555;
   border-radius: 3px;
@@ -73,8 +63,7 @@ h2 {
 }
 
 .cube > div:hover {
-  background-color: rgba(0, 0, 0, 0.85);
-  color: #000;
+  background-color: rgba(50, 50, 50, 0.85);
 }
 
 .cube > div:first-child {

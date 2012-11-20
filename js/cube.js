@@ -146,7 +146,7 @@ $(function () {
       temp = ScreenWidth;
     }
 
-    cube_size = Math.ceil(temp / 1.55);
+    cube_size = Math.ceil(temp / 1.5);
     console.log(cube_size);
     padding = 0.1 * cube_size;
     distance = (cube_size / 2) + (padding / 2);
