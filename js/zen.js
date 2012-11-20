@@ -28,6 +28,7 @@ $(document).ready(function(){
       $(this).jPlayer("setMedia", {
         m4a: "audio/01_Tribu.m4a",
         mp3: "audio/01_Tribu.mp3",
+        oga: "audio/01_Tribu.ogg"
       });
     },
     swfPath: "",
