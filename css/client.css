@@ -1,3 +1,8 @@
+body {
+  font-family: "Helvetica Neue Bold", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  background: transparent url('../images/courbe.png') no-repeat;
+}
+
 ::-webkit-scrollbar{height:9px;width:9px;}
 ::-webkit-scrollbar-button:start:decrement,::-webkit-scrollbar-button:end:increment{background:transparent;display:none;}
 ::-webkit-scrollbar-track-piece{background:#F8F8F8;}
