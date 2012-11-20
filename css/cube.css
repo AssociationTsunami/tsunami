@@ -10,10 +10,6 @@ h2 {
   overflow-y: auto;
 }
 
-#face {
-  
-}
-
 .viewport {
   margin: 10% auto 0 30%;
   -webkit-perspective: 800px;
@@ -62,15 +58,23 @@ h2 {
   color: #fff;
 }
 
+/* cubesides content are non selectable by default */
+
 .cube > div {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
   position: absolute;
   background-color: rgba(50, 50, 50, 0.85);
-  font-size: 1em;
-  line-height: 1em;
   color: #fff;
   border: 1px solid #555;
   border-radius: 3px;
   overflow: hidden;
+}
+
+.cube > div:hover {
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #000;
 }
 
 .cube > div:first-child {

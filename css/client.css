@@ -44,24 +44,10 @@ div#zen {
 
 }
 
-.ui-dialog-title {
-  text-transform:uppercase;
-}
+.ui-widget-header { border: none; background: none;}
 
-.ui-widget-header { border: none; background: none; font-size:96%;}
-
-.ui-dialog-content {
-  color:#000;
-  font-size: 77%;
-}
-
-.ui-tabs-panel {
-  color:#FFFFFF;
-  font-size: 88%;
-}
-
-.ui-widget-content li {
-  font-size: 77%;
+.ui-widget-content {
+background: none;
 }
 
 .st_loading{

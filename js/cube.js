@@ -24,8 +24,8 @@ $(function () {
   },
   touch = document.ontouchmove !== undefined,
   viewport = {
-    x: -10,
-    y: 20,
+    x: 0,
+    y: 0,
     el: $('.cube')[0],
     move: function (coords) {
       if (coords) {
@@ -41,7 +41,7 @@ $(function () {
   };
 
   viewport.duration = function () {
-    var d = touch ? 50 : 500;
+    var d = touch ? 100 : 1500;
     viewport.el.style[transitionDurationProp] = d + "ms";
     return d;
     }();
@@ -146,7 +146,8 @@ $(function () {
       temp = ScreenWidth;
     }
 
-    cube_size = Math.ceil(temp / 1.7);
+    cube_size = Math.ceil(temp / 1.55);
+    console.log(cube_size);
     padding = 0.1 * cube_size;
     distance = (cube_size / 2) + (padding / 2);
     div_size = cube_size - padding;
