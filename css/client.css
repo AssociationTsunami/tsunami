@@ -12,29 +12,12 @@ body {
 ::-webkit-scrollbar-track-piece:horizontal:end{border-top-left-radius:0;border-top-right-radius:0px;border-bottom-right-radius:0px;border-bottom-left-radius:0;-moz-border-radius-topleft:0;-moz-border-radius-topright:5px;-moz-border-radius-bottomright:5px;-moz-border-radius-bottomleft:0;-webkit-border-top-left-radius:0;-webkit-border-top-right-radius:0px;-webkit-border-bottom-right-radius:0px;-webkit-border-bottom-left-radius:0;}
 ::-webkit-scrollbar-thumb:vertical,::-webkit-scrollbar-thumb:horizontal{background:#999;border-radius:0px;-moz-border-radius:0px;-webkit-border-radius:0px;display:block;height:50px;}
 
+/* JQuery Overwrites and Tabs ------------------------------------------------------ */
+#tabs {overflow-y: auto;}
 
-#wrapper  {
-  float:center;
-}
-
-.ui-accordion-content {
-  font-size: 77%;
-}
-
-#tabs {
-  overflow-y: auto;
-}
-
-/* Player ------------------------------------------------------ */
-
-div#zen {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin: -50px 0 0 -50px;
-}
-
-.ui-tabs-anchor { outline: none; }
+.ui-tabs-anchor {outline: none;}
+.ui-widget-header {border: none; background: none;}
+.ui-widget-content {background: none;}
 
 .ui-dialog {
   /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -49,10 +32,13 @@ div#zen {
 
 }
 
-.ui-widget-header { border: none; background: none;}
+/* Player ------------------------------------------------------ */
 
-.ui-widget-content {
-  background: none;
+div#zen {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -50px 0 0 -50px;
 }
 
 .st_loading{
@@ -67,7 +53,7 @@ div#zen {
   opacity:0.6;
 }
 
-/* Image slider */
+/* Image slider ------------------------------------------------------ */
 
 .st_overlay{
   position:absolute;
@@ -87,7 +73,7 @@ div#zen {
   max-height:100%;
 }
 
-/* Navigation Style */
+/* Navigation Style ------------------------------------------------------ */
 ul.menu{
   list-style:none;
   font-size: 15px;
@@ -128,7 +114,8 @@ ul.menu li > a{
   opacity:0.9;
   filter:progid:DXImageTransform.Microsoft.Alpha(opacity=90);
 }
-/* Thumb Scrolling Style */
+
+/* Thumb Scrolling Style ------------------------------------------------------ */
 div.sc_menu_wrapper {
   position: absolute;
   top:0px;
@@ -151,14 +138,15 @@ div.sc_menu {
   box-shadow:3px -3px 3px #3B0F4F;
   -webkit-box-shadow:3px -3px 3px #3B0F4F;
 }
+
 .sc_menu img {
   display: block;
   border: none;
   opacity:0.3;
   filter:progid:DXImageTransform.Microsoft.Alpha(opacity=30);
 }
-​
 
+/* Footer ------------------------------------------------------ */
 #footer {
   background:transparent url(../images/logo.png) no-repeat bottom right;
   height: 100px; 
