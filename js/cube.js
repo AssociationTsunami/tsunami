@@ -1,9 +1,5 @@
 var dragging = 0;
-var leftArrow = "M6.684,25.682L24.316,15.5L6.684,5.318V25.682z",
-    rightArrow = "M24.316,5.318L6.684,15.5l17.632,10.182V5.318L24.316,5.318z",
-    topArrow = "M25.682,24.316L15.5,6.684L5.318,24.316H25.682z",
-    bottomArrow = "M5.318,6.684L15.5,24.316L25.682,6.684H5.318z";
-    
+
 $(function () {
   var el = document.createElement('div'),
   transformProps = 'transform WebkitTransform MozTransform OTransform msTransform'.split(' '),
