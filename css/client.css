@@ -3,6 +3,15 @@ body {
   background: transparent url('../images/courbe.png') no-repeat;
 }
 
+
+#unsonparla {
+  position: absolute;
+  left: 25px;
+  bottom: 0px;
+  width:15%;
+  z-index:10000;
+}
+
 ::-webkit-scrollbar{height:9px;width:9px;}
 ::-webkit-scrollbar-button:start:decrement,::-webkit-scrollbar-button:end:increment{background:transparent;display:none;}
 ::-webkit-scrollbar-track-piece{background:#F8F8F8;}
@@ -17,7 +26,7 @@ body {
 
 .ui-tabs-anchor {outline: none;}
 .ui-widget-header {border: none; background: none;}
-.ui-widget-content {background: none;}
+.ui-widget-content {background: none;overflow-y: auto;}
 
 .ui-dialog {
   /* IE9 SVG, needs conditional override of 'filter' to 'none' */
