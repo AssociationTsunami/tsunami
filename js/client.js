@@ -67,7 +67,7 @@ function tsunamiClient() {
   this.tsunamiPlayer = function(music) {
     ///init screen
     var player = $(".zen .player");
-
+    console.log(music);
     player.jPlayer({
       ready: function () {
         $(this).jPlayer("setMedia", {
