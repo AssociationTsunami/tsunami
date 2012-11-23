@@ -43,10 +43,10 @@ body {
 
 /* Player ------------------------------------------------------ */
 
-div#zen {
+div.zen {
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: 80%;
+  bottom: 5%;
   margin: -50px 0 0 -50px;
 }
 

@@ -62,31 +62,189 @@ function tsunamiClient() {
       }
     });
   };
-    // Slider Menu
-    this.sliderMenu = function() {
-      /* function to make the thumbs menu scrollable */
-      //clicking on a thumb, replaces the large image
-      $list.find('.sc_menu img').bind('click',function(){
-        var $this = $(this);
-        $('<img class="st_preview"/>').load(function(){
-          var $this = $(this);
-          var $currImage = $('#st_main').children('img:first');
-          $this.insertBefore($currImage);
-          console.log("pull the musician's profile data");
-          $currImage.fadeOut(2000,function(){
-            $(this).remove();
-          });
-          }).attr('src',$this.attr('alt'));
-        }).bind('mouseenter',function(){
-          $(this).stop().animate({'opacity':'1'});
-        }).bind('mouseleave',function(){
-          $(this).stop().animate({'opacity':'0.7'});
+  // jPlayer
+  this.tsunamiPlayer = function(music) {
+    ///init screen
+    //var player = $(".zen .player");
+    var no_of_tracks = $(".sc_menu a").length;
+    var player = new jPlayer(".zen .player", {
+      ready: function () {
+        $(this).jPlayer("setMedia", {
+          m4a: m4a,
+          mp3: mp,
+          oga: oga
         });
-        $('.cube > div:nth-child(5)').css({
-          'background': 'transparent url(/images/pattern.png) repeat-x bottom left',
-        });
+      },
+      swfPath: "/js/jplayer/Jplayer.swf",
+      supplied: "m4a, mp3, oga"         
+    });
+    // preload, update, end
+    player.bind($.jPlayer.event.progress, function(event) {    
 
-      //the loading image
+      var audio = $('.zen audio').get(0);
+      var pc = 0;    
+
+      if ((audio.buffered != undefined) && (audio.buffered.length != 0)) {
+        pc = parseInt(((audio.buffered.end(0) / audio.duration) * 100), 10); 
+        displayBuffered(pc);
+        //console.log(pc);
+        if(pc >= 99) {
+          //console.log("loaded");
+          $('.zen .buffer').addClass("loaded");
+        }  
+      }        
+
+    });
+    //player.bind($.jPlayer.event.loadeddata, function(event) {    
+      //$('.zen .buffer').addClass("loaded");    
+    //});
+
+    player.bind($.jPlayer.event.timeupdate, function(event) { 
+      var pc = event.jPlayer.status.currentPercentAbsolute;
+      if (!dragging) { 
+        displayProgress(pc);
+      }
+    });
+
+    player.bind($.jPlayer.event.ended, function(event) {   
+      $('.zen .circle').removeClass( "rotate" );
+      $(".zen").removeClass( "play" );
+      $('.zen .progress').css({rotate: '0deg'});
+      status = "stop";
+    });
+
+    // play/pause
+
+    $(".zen .button").bind('mousedown', function() {
+      // not sure if this can be done in a simpler way.
+      // when you click on the edge of the play button, but button scales down and doesn't drigger the click,
+      // so mouseleave is added to still catch it.
+      $(this).bind('mouseleave', function() {
+        $(this).unbind('mouseleave');
+        onClick();
+      });
+    });
+
+    $(".zen .button").bind('mouseup', function() {
+      $(this).unbind('mouseleave');
+      onClick();
+    });
+
+    function onClick() {
+
+      if(status != "play") {
+        status = "play";
+        $(".zen").addClass( "play" );
+        player.jPlayer("play");
+      } else {
+        $('.zen .circle').removeClass( "rotate" );
+        $(".zen").removeClass( "play" );
+        status = "pause";
+        player.jPlayer("pause");
+      }
+    };
+
+    // draggin
+
+    var clickControl = $('.zen .drag');
+
+    clickControl.grab({
+      onstart: function(){
+        dragging = true;
+        $('.zen .button').css( "pointer-events", "none" );
+
+      }, onmove: function(event){
+        var pc = getArcPc(event.position.x, event.position.y);
+        player.jPlayer("playHead", pc).jPlayer("play");
+        displayProgress(pc);
+
+      }, onfinish: function(event){
+        dragging = false;
+        var pc = getArcPc(event.position.x, event.position.y);
+        player.jPlayer("playHead", pc).jPlayer("play");
+        $('.zen .button').css( "pointer-events", "auto" );
+      }
+    });	
+
+    // functions
+
+    function displayProgress(pc) {
+      var degs = pc * 3.6+"deg"; 
+      $('.zen .progress').css({rotate: degs});
+    }
+    function displayBuffered(pc) {
+      var degs = pc * 3.6+"deg"; 
+      $('.zen .buffer').css({rotate: degs});
+    }
+
+    function getArcPc(pageX, pageY) { 
+      var	self	= clickControl,
+      offset	= self.offset(),
+      x	= pageX - offset.left - self.width()/2,
+      y	= pageY - offset.top - self.height()/2,
+      a	= Math.atan2(y,x);  
+
+      if (a > -1*Math.PI && a < -0.5*Math.PI) {
+        a = 2*Math.PI+a; 
+      } 
+
+      // a is now value between -0.5PI and 1.5PI 
+      // ready to be normalized and applied   			
+      var pc = (a + Math.PI/2) / 2*Math.PI * 10;   
+
+      return pc;
+    }
+  }; 
+  // end jPlayer
+  
+  
+  // Slider Menu
+  this.sliderMenu = function() {
+    /* function to make the thumbs menu scrollable */
+    //clicking on a thumb, replaces the large image
+    //and loads the jPlayer with the sound files for the Artist
+    $list.find('.sc_menu img').bind('click',function(){
+      var $this = $(this);
+      var link = $this.parent();
+      console.log(link);
+      var music;
+      title = link.text();
+      mp = link.attr("mp3");
+      oga = link.attr("oga");
+      m4a = link.attr("m4a");
+      m4v = link.attr("m4v");
+      ogv = link.attr("ogv");
+      webmv = link.attr("webmv");
+      poster = link.attr("poster");
+      music = {
+        title: title,
+        mp: mp,
+        oga: oga,
+        m4a: m4a,
+        ogv: ogv,
+        webmv: webmv,
+        poster: poster,
+      }
+      console.log(music);
+      self.tsunamiPlayer(music);
+      $('<img class="st_preview"/>').load(function(){
+        var $this = $(this);
+        var $currImage = $('#st_main').children('img:first');
+        $this.insertBefore($currImage);
+        $currImage.fadeOut(2000,function(){
+          $(this).remove();
+        });
+        }).attr('src',$this.attr('alt'));
+      }).bind('mouseenter',function(){
+        $(this).stop().animate({'opacity':'1'});
+      }).bind('mouseleave',function(){
+        $(this).stop().animate({'opacity':'0.7'});
+      });
+
+      $('.cube > div:nth-child(5)').css({
+        'background': 'transparent url(/images/pattern.png) repeat-x bottom left',
+      });
+
       function buildThumbs($elem){
         var $wrapper = $elem.next();
         var $menu = $wrapper.find('.sc_menu');

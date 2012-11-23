@@ -7,7 +7,7 @@
 
 /* player */
 
-#zen .player {
+.zen .player {
   /* With display: none; it doesn't work on iOS, below an alternative */
   position: absolute;
   width: 0;
@@ -15,7 +15,7 @@
 }
 
 
-#zen:before {
+.zen:before {
   content: "";
   position: absolute;
   display: inline-block;
@@ -33,7 +33,7 @@
   background:      -o-radial-gradient(50% 0 180deg, circle farthest-side, hsla(0,0%,50%,.05), hsla(0,0%,100%,.4) );
   background: 	    radial-gradient(50% 0 180deg, circle farthest-side, hsla(0,0%,50%,.05), hsla(0,0%,100%,.4) );
 }
-#zen {
+.zen {
   display: inline-block;
   position: relative;
   padding: 2px;
@@ -45,14 +45,14 @@
   box-shadow: rgba(255,255,255,.8) 0 2px 3px, rgba(0,0,0,.5) 0 -1px 2px;
   text-align: left; /*Fix for Chrome/FF*/
 }
-#zen.play {
+.zen.play {
   cursor: -webkit-grab;
   cursor:    -moz-grab;
   cursor: 	-ms-grab;
   cursor: 	 -o-grab;
   cursor: 		grab;
 }
-#zen.play:active {
+.zen.play:active {
   cursor: -webkit-grabbing;
   cursor:    -moz-grabbing;
   cursor: 	-ms-grabbing;
@@ -65,7 +65,7 @@
 
 /* button */
 
-#zen .button {	
+.zen .button {	
   position: absolute;
   display: inline-block;
   border: none;
@@ -94,7 +94,7 @@
 }
 
 
-#zen .button:active, #zen.play .button {
+.zen .button:active, .zen.play .button {
   -webkit-transform:  scale(.5);
   -moz-transform:  scale(.5);
   -ms-transform:  scale(.5);
@@ -120,14 +120,14 @@
 }
 
 
-#zen .button:active, #zen.play .button:active {
+.zen .button:active, .zen.play .button:active {
   -webkit-transform:  scale(.5);	
   -moz-transform:  scale(.5);	
   -ms-transform:  scale(.5);	
   -o-transform:  scale(.5);	
   transform:  scale(.5);	
 }
-#zen.play .button {
+.zen.play .button {
   border-radius: 30px;
   -webkit-transform:  scale(.54);
   -moz-transform:  scale(.54);
@@ -138,14 +138,14 @@
 
 /* icon */
 
-#zen .button .icon {
+.zen .button .icon {
   position: absolute;
   display: inline-block;
   top: 0;
   width: 100px;
   height: 100px;
 }
-#zen .button .icon.play {
+.zen .button .icon.play {
   background: url(images/zen/play.png) no-repeat;
 
   -webkit-transition: opacity 1s cubic-bezier(.5,.5,.5,1);	
@@ -154,7 +154,7 @@
   -o-transition: opacity 1s cubic-bezier(.5,.5,.5,1);	
   transition: opacity 1s cubic-bezier(.5,.5,.5,1);	
 }
-#zen.play .button .play {
+.zen.play .button .play {
   opacity: 0;
   -webkit-transition: none;
   -moz-transition: none;
@@ -163,11 +163,11 @@
   transition: none;
 }
 
-#zen .button .icon.pause {
+.zen .button .icon.pause {
   opacity: 0;	
   background: url(images/zen/pause.png) no-repeat;
 }
-#zen.play .button .pause {
+.zen.play .button .pause {
   opacity: 1;
   -webkit-transition: opacity 1s cubic-bezier(.5,.5,.5,1);	
   -moz-transition: opacity 1s cubic-bezier(.5,.5,.5,1);	
@@ -180,7 +180,7 @@
 
 /* drag */
 
-#zen .drag {
+.zen .drag {
   display: block;
   position: absolute;
   width: 100px;
@@ -191,14 +191,14 @@
 
 /* buffer */
 
-#zen .buffer {
+.zen .buffer {
   display: block;
   position: absolute;
   width: 100px;
   height: 100px;
   background: url(images/zen/buffer.png) no-repeat;
 }
-#zen .buffer.loaded {
+.zen .buffer.loaded {
   opacity: 0;
   -webkit-transition: opacity .5s;
   -moz-transition: opacity .5s;	
@@ -209,7 +209,7 @@
 
 /* progress */
 
-#zen .progress {
+.zen .progress {
   display: block;
   position: absolute;
   width: 100px;
@@ -225,7 +225,7 @@
 
 /* circle */
 
-#zen .circle {
+.zen .circle {
   display: block;
   position: absolute;
   width: 98px;
@@ -259,7 +259,7 @@
 }
 
 
-#zen.play .circle {
+.zen.play .circle {
   background-color: hsl(200,100%,60%);	
 
   -webkit-transform: scale(1) rotate(0deg);
@@ -282,7 +282,7 @@
 }
 
 
-#zen.play .circle.rotate {
+.zen.play .circle.rotate {
   -webkit-animation: rotate 20s linear infinite;
   -moz-animation: rotate 20s linear infinite;
   -ms-animation: rotate 20s linear infinite;
