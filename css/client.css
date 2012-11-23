@@ -43,12 +43,22 @@ body {
 
 /* Player ------------------------------------------------------ */
 
+
+div#jplayer .zen {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  margin: -50px 0 0 -50px;
+}
+
 div.zen {
   position: absolute;
   left: 80%;
   bottom: 5%;
   margin: -50px 0 0 -50px;
 }
+
+/* Player ------------------------------------------------------ */
 
 .st_loading{
   position:fixed;

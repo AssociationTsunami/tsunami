@@ -22,7 +22,9 @@ $(document).ready(function(){
         m4a: "audio/01_Tribu.m4a",
         mp3: "audio/01_Tribu.mp3",
         oga: "audio/01_Tribu.ogg"
-      });
+      } , {
+          cssSelectorAncestor: "#jplayer"
+        });
     },
     swfPath: "",
     supplied: "m4a, mp3, oga"         

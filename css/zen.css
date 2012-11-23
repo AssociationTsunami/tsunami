@@ -5,9 +5,9 @@
 */
 
 
-/* player */
+/* players */
 
-.zen .player {
+.zen .player, {
   /* With display: none; it doesn't work on iOS, below an alternative */
   position: absolute;
   width: 0;
