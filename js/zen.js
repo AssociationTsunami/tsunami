@@ -14,16 +14,16 @@ $(document).ready(function(){
 
   // init
 
-  var player = $(".zen .player");
+  var player = $("#artist_player");
 
   player.jPlayer({
     ready: function () {
       $(this).jPlayer("setMedia", {
-        m4a: "audio/01_Tribu.m4a",
-        mp3: "audio/01_Tribu.mp3",
-        oga: "audio/01_Tribu.ogg"
+        m4a: "audio/song.m4a",
+        mp3: "audio/song.mp3",
+        oga: "audio/song.ogg"
       } , {
-          cssSelectorAncestor: "#jplayer"
+          cssSelectorAncestor: "#st_play"
         });
     },
     swfPath: "",
@@ -33,7 +33,7 @@ $(document).ready(function(){
   // preload, update, end
   player.bind($.jPlayer.event.progress, function(event) {    
 
-    var audio = $('.zen audio').get(0);
+      var audio = $('.zen audio')/*.get(0)*/;
     var pc = 0;    
 
     if ((audio.buffered != undefined) && (audio.buffered.length != 0)) {
@@ -85,7 +85,7 @@ $(document).ready(function(){
 
   function onClick() {
 
-    if(status != "play") {
+    if(!($(".zen").hasClass("play"))) {//(status!=play)
       status = "play";
       $(".zen").addClass( "play" );
       player.jPlayer("play");
@@ -96,6 +96,7 @@ $(document).ready(function(){
       player.jPlayer("pause");
     }
   };
+  
 
   // draggin
 

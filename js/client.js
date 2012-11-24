@@ -66,14 +66,27 @@ function tsunamiClient() {
   // jPlayer
   this.tsunamiPlayer = function(music) {
     ///init screen
-    var player = $(".zen .player");
-    console.log(music);
+    var player =  $("#artist_player");//$(".zen .player");
+	 player.jPlayer("stop")/*.unbind($.jPlayer.event.play)*/.jPlayer("setMedia",  {
+          m4a: music.m4a,
+          mp3: music.mp3,
+          oga: music.oga
+        }  /*, {
+          cssSelectorAncestor: "#st_main"
+        } */).jPlayer("play");
+	$(".zen").addClass( "play" );
+	console.log(status);
+/*	player.bind($.jPlayer.event.play, function(event) { // Add a listener to report the time play began
+  		$(this).jPlayer("pauseOthers"); 	
+	});*/
+
+/*
     player.jPlayer({
       ready: function () {
         $(this).jPlayer("setMedia", {
-          m4a: m4a,
-          mp3: mp,
-          oga: oga
+          m4a: music.m4a,
+          mp3: music.mp3,
+          oga: music.oga
         }  , {
           cssSelectorAncestor: "#st_main"
         });
@@ -196,7 +209,7 @@ function tsunamiClient() {
       var pc = (a + Math.PI/2) / 2*Math.PI * 10;   
 
       return pc;
-    }
+    }*/
   }; 
   // end jPlayer
   
