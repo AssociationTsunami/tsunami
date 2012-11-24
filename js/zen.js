@@ -28,7 +28,8 @@ $(document).ready(function(){
     },
     swfPath: "",
     supplied: "m4a, mp3, oga"         
-  });  
+  }).jPlayer("play").jPlayer("pause");
+   
 
   // preload, update, end
   player.bind($.jPlayer.event.progress, function(event) {    
