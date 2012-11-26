@@ -69,7 +69,9 @@ $(function () {
         default:
         break;
       };
-    }).bind('mousedown touchstart', function (evt) {
+    });
+    
+    $('.top').bind('mousedown touchstart', function (evt) {
       delete mouse.last;
       if ($(evt.target).is('a, iframe')) {
         return true;
@@ -78,7 +80,7 @@ $(function () {
       evt.originalEvent.touches ? evt = evt.originalEvent.touches[0] : null;
       mouse.start.x = evt.pageX;
       mouse.start.y = evt.pageY;
-      $(document).bind('mousemove touchmove', function (event) {
+      $('.top').bind('mousemove touchmove', function (event) {
         dragging = 1;
         // Only perform rotation if one touch or mouse (e.g. still scale with pinch and zoom)
         if (!touch || !(event.originalEvent && event.originalEvent.touches.length > 1)) {
@@ -89,9 +91,9 @@ $(function () {
         }
       });
 
-      $(document).bind('mouseup touchend', function () {
+      $('.top').bind('mouseup touchend', function () {
         dragging = 0;
-        $(document).unbind('mousemove touchmove');
+        $('.top').unbind('mousemove touchmove');
 
       });
     });

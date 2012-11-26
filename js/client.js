@@ -35,6 +35,7 @@ function tsunamiClient() {
     $(".accordion").accordion({ header: "h3", collapsible: true, active: false });
     $("#tabs").tabs();
   };
+  
   this.drawMarkers = function () {
     var iconHolder = self.svg.append('svg:g')
       .attr("transform", "translate(" + -120 + "," + 0 + ")")
