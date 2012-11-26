@@ -37,7 +37,7 @@ $(function () {
   };
 
   viewport.duration = function () {
-    var d = touch ? 200 : 3000;
+    var d = touch ? 10 : 1000;
     viewport.el.style[transitionDurationProp] = d + "ms";
     return d;
     }();
@@ -80,7 +80,7 @@ $(function () {
       evt.originalEvent.touches ? evt = evt.originalEvent.touches[0] : null;
       mouse.start.x = evt.pageX;
       mouse.start.y = evt.pageY;
-      $('.top').bind('mousemove touchmove', function (event) {
+      $(document).bind('mousemove touchmove', function (event) {
         dragging = 1;
         // Only perform rotation if one touch or mouse (e.g. still scale with pinch and zoom)
         if (!touch || !(event.originalEvent && event.originalEvent.touches.length > 1)) {
@@ -91,10 +91,9 @@ $(function () {
         }
       });
 
-      $('.top').bind('mouseup touchend', function () {
+      $(document).bind('mouseup touchend', function () {
         dragging = 0;
-        $('.top').unbind('mousemove touchmove');
-
+        $(document).unbind('mousemove touchmove');
       });
     });
 
