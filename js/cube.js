@@ -71,7 +71,7 @@ $(function () {
       };
     });
     
-    $('.top').bind('mousedown touchstart', function (evt) {
+    $('.top, .bottom').bind('mousedown touchstart', function (evt) {
       delete mouse.last;
       if ($(evt.target).is('a, iframe')) {
         return true;
