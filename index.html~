@@ -271,9 +271,9 @@
         </div> <!-- tabs end-->
         <div id="st_main">
           <span class="top"></span>
-          <div id="ppp" class="st_preview">
+          <div id="ppp">
           </div>
-          <!--img src="/artistes/david_merlo/David_Merlo_Solo_PosteaGalene_2011_Ulrike_Monso.jpg" alt="" class="st_preview" style="display:none;" /-->
+          <img src="/artistes/david_merlo/David_Merlo_Solo_PosteaGalene_2011_Ulrike_Monso.jpg" alt="" class="st_preview" style="display:none;" />
           <div class="st_overlay"></div>
           <ul class="menu">
             <li>

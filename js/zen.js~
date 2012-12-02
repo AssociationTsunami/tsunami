@@ -25,6 +25,8 @@ $(document).ready(function(){
           m4v: "/audio/sample_iPod.m4v"      
       } , {
           cssSelectorAncestor: "#st_play",
+          size: {width: {Audio:"100px", Video: "100px"}, 
+            height: {Audio:"100px", Video: "100px"}}
          // cssSelectors: {
            // poster: ".st_preview"            
            // }

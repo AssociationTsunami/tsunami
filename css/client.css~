@@ -107,6 +107,7 @@ div.zen {
 }
 
 #ppp {
+  z-index: 100;
   position: absolute;
   top: 8px;
   bottom: 40px;
