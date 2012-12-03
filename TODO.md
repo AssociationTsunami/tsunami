@@ -25,4 +25,3 @@ where the '//' area is selectable and draggable but the white area is non user s
 
 Test to see if this works with jquery-ui tabs and accordion. - DONE
 
-
