@@ -23,7 +23,8 @@ $(document).ready(function(){
        // m4a: "/audio/01_Tribu.m4a",
        // mp3: "/audio/01_Tribu.mp3",
        // oga: "/audio/01_Tribu.ogg"
-          m4v: "/audio/sample_iPod.m4v"      
+          m4v: "/audio/sample_iPod.m4v",
+          poster: "/images/10.jpg"      
       } , {
           cssSelectorAncestor: "#st_play",
          // cssSelectors: {
