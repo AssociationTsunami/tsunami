@@ -15,7 +15,7 @@ function tsunamiClient() {
   //let's load the current image 
   //and just then display the navigation menu
   $('<img>').load(function(){
-    $currImage.fadeIn(3000);
+    //$currImage.fadeIn(3000);
     //slide out the menu
     setTimeout(function(){
       $list.animate({'left':'0px'},500);
@@ -29,19 +29,6 @@ function tsunamiClient() {
 
   var imgSel = $(".st_preview");
   var vidSel = $(".video_view");
-
-  var posterVisible = true;
-  this.enableVideo = function() {
-    imgSel.hide();
-    vidSel.show();
-    posterVisible = false;
-  }
-
-  this.enablePoster = function() {
-    imgSel.show();
-    vidSel.hide();
-    posterVisible = true;
-  }
 
   this.switchPosterOrVideo = function() {
     if (!posterVisible) self.enablePoster();
@@ -89,10 +76,14 @@ function tsunamiClient() {
   this.tsunamiPlayer = function(music) {
     ///init screen
     var player =  $("#ppp");//$(".zen .player");
+      player.bind("resize", function(){
+    console.log("cs"+ cube_size);
+  });
     player.jPlayer("stop")/*.unbind($.jPlayer.event.play)*/.jPlayer("setMedia",  {
       m4a: music.m4a,
       mp3: music.mp3,
       oga: music.oga,
+      m4v: music.m4v,
       poster: music.poster
     }  /*, {
     cssSelectorAncestor: "#st_main"

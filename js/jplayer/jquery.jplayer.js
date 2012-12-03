@@ -1831,13 +1831,15 @@
 				this.status.height = this.options.sizeFull.height;
 				this.status.cssClass = this.options.sizeFull.cssClass;
 			} else {
-				this.status.width = this.options.size.width;
-				this.status.height = this.options.size.height;
+				this.status.width = '95%'//hack. this.options.size.width;
+				this.status.height = '80%'//hack. this.options.size.height;
 				this.status.cssClass = this.options.size.cssClass;
 			}
 
 			// Set the size of the jPlayer area.
+			
 			this.element.css({'width': this.status.width, 'height': this.status.height});
+			//hack. this.element.css({'max-width': '100%', 'max-height': '100%'});
 		},
 		_addUiClass: function() {
 			if(this.ancestorJq.length) {
