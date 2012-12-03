@@ -55,8 +55,8 @@ function tsunamiClient() {
     self.sliderMenu();
     $(".accordion").accordion({ header: "h3", collapsible: true, active: false });
     $("#tabs").tabs();
-   // $(".jScrollbar").jScrollbar();
   };
+
   this.drawMarkers = function () {
     var iconHolder = self.svg.append('svg:g')
       .attr("transform", "translate(" + -120 + "," + 0 + ")")
@@ -88,11 +88,12 @@ function tsunamiClient() {
   // jPlayer
   this.tsunamiPlayer = function(music) {
     ///init screen
-    var player =  $("#artist_player");//$(".zen .player");
+    var player =  $("#ppp");//$(".zen .player");
     player.jPlayer("stop")/*.unbind($.jPlayer.event.play)*/.jPlayer("setMedia",  {
       m4a: music.m4a,
       mp3: music.mp3,
-      oga: music.oga
+      oga: music.oga,
+      poster: music.poster
     }  /*, {
     cssSelectorAncestor: "#st_main"
     } */).jPlayer("play");
@@ -110,28 +111,29 @@ function tsunamiClient() {
     //clicking on a thumb, replaces the large image
     //and loads the jPlayer with the sound files for the Artist
     $list.find('.sc_menu img').bind('click',function(){
-      $("#btn").unbind("click");
-
       var $this = $(this);
       var link = $this.parent();
       var music;
       title = link.text();
-      mp = link.attr("mp3");
+      mp3 = link.attr("mp3");
       oga = link.attr("oga");
       m4a = link.attr("m4a");
       m4v = link.attr("m4v");
       ogv = link.attr("ogv");
       webmv = link.attr("webmv");
-      poster = link.attr("poster");
+      poster = $('img', link).attr("alt");
+        console.log(poster);
       music = {
         title: title,
-        mp: mp,
+        mp3: mp3,
         oga: oga,
         m4a: m4a,
+        m4v: m4v,
         ogv: ogv,
         webmv: webmv,
-        poster: poster,
+        poster: poster
       }
+      console.log(music);
       self.tsunamiPlayer(music);
       $('<img class="st_preview"/>').load(function(){
         var $this = $(this);
@@ -141,9 +143,6 @@ function tsunamiClient() {
           $(this).remove();
         });
         }).attr('src',$this.attr('alt'));
-        $("#btn").bind("click", function(){  
-          console.log("dfgg");tsunamiClient.switchPosterOrVideo();
-        });
       }).bind('mouseenter',function(){
         $(this).stop().animate({'opacity':'1'});
       }).bind('mouseleave',function(){
@@ -214,7 +213,6 @@ function tsunamiClient() {
     };
     // Initialise  
     this.init();
-
   };
 
 var tsunamiClient;

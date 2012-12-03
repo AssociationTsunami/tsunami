@@ -37,7 +37,7 @@ $(function () {
   };
 
   viewport.duration = function () {
-    var d = touch ? 200 : 3000;
+    var d = touch ? 10 : 1000;
     viewport.el.style[transitionDurationProp] = d + "ms";
     return d;
     }();
@@ -69,7 +69,9 @@ $(function () {
         default:
         break;
       };
-    }).bind('mousedown touchstart', function (evt) {
+    });
+    
+    $('.top, .bottom').bind('mousedown touchstart', function (evt) {
       delete mouse.last;
       if ($(evt.target).is('a, iframe')) {
         return true;
@@ -92,7 +94,6 @@ $(function () {
       $(document).bind('mouseup touchend', function () {
         dragging = 0;
         $(document).unbind('mousemove touchmove');
-
       });
     });
 

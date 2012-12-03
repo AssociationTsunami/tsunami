@@ -8,34 +8,37 @@
  *
  */
 
-//startup trigger
-$(document).ready(function(){
 
-  // init  
+$(document).ready(function(){
   var status = "stop";
   var dragging = false;
 
-  // example selector
-  var player = $("#artist_player");
+  // init
 
-  // selector ancestor
+  var player = $("#ppp");//artist_player");
+
   player.jPlayer({
     ready: function () {
       $(this).jPlayer("setMedia", {
-        m4a: "audio/01_Tribu.m4a",
-        mp3: "audio/01_Tribu.mp3",
-        oga: "audio/01_Tribu.ogg"
+       // m4a: "/audio/01_Tribu.m4a",
+       // mp3: "/audio/01_Tribu.mp3",
+       // oga: "/audio/01_Tribu.ogg"
+          m4v: "/audio/sample_iPod.m4v"      
       } , {
-          cssSelectorAncestor: "#st_play"
+          cssSelectorAncestor: "#st_play",
+         // cssSelectors: {
+           // poster: ".st_preview"            
+           // }
         });
     },
-    swfPath: "/js/jplayer/",
-    supplied: "m4a, mp3, oga"         
+    swfPath: "/js/jplayer",
+    supplied: "m4a, mp3, oga, m4v"         
   }).jPlayer("play").jPlayer("pause");
    
+
   // preload, update, end
   player.bind($.jPlayer.event.progress, function(event) {    
-			//!TODO replace .zen with #example-selector
+
       var audio = $('.zen audio')/*.get(0)*/;
     var pc = 0;    
 
@@ -64,7 +67,6 @@ $(document).ready(function(){
   });
 
   player.bind($.jPlayer.event.ended, function(event) {   
-  	//!TODO replace .zen with #example-selector
     $('.zen .circle').removeClass( "rotate" );
     $(".zen").removeClass( "play" );
     $('.zen .progress').css({rotate: '0deg'});
@@ -83,14 +85,12 @@ $(document).ready(function(){
     });
   });
 
-	//!TODO replace .zen with #example-selector
   $(".zen .button").bind('mouseup', function() {
     $(this).unbind('mouseleave');
     onClick();
   });
 
   function onClick() {
-		//!TODO replace .zen with #example-selector
     if(!($(".zen").hasClass("play"))) {//(status!=play)
       status = "play";
       $(".zen").addClass( "play" );
@@ -122,12 +122,10 @@ $(document).ready(function(){
       dragging = false;
       var pc = getArcPc(event.position.x, event.position.y);
       player.jPlayer("playHead", pc).jPlayer("play");
-      //!TODO replace .zen with #example-selector
       $('.zen .button').css( "pointer-events", "auto" );
     }
   });	
 
-  // functions - progressbar
   function displayProgress(pc) {
     var degs = pc * 3.6+"deg"; 
     $('.zen .progress').css({rotate: degs});
