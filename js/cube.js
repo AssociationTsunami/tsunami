@@ -1,5 +1,7 @@
 var dragging = 0;
 
+var cube_size = null;
+
 $(function () {
   var el = document.createElement('div'),
   transformProps = 'transform WebkitTransform MozTransform OTransform msTransform'.split(' '),
@@ -132,7 +134,7 @@ $(function () {
     var ScreenWidth = $(window).width();
     var ScreenHeight = $(window).height();
     var temp = null;
-    var cube_size = null;
+    //var cube_size = null;
     var div_size = null;
     var padding = null;
     var distance = null;
@@ -145,9 +147,9 @@ $(function () {
 
     cube_size = Math.ceil(temp / 1.5);
     console.log(cube_size);
-    padding = 0.1 * cube_size;
-    distance = (cube_size / 2) + (padding / 2);
-    div_size = cube_size - padding;
+    padding = 0.05 * cube_size;
+    distance = (cube_size / 2);// + (padding/2);
+    div_size = cube_size - 2*padding;
     var translate = ' translateZ(' + distance + 'px)'
 
     $('.cube').css({
